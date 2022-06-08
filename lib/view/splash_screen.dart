@@ -20,7 +20,7 @@ class SplashScreen extends StatelessWidget {
       //       .push(MaterialPageRoute(builder: (context) => LoginPage()));
 
       //push navigator with named routing
-      Navigator.of(context).pushNamed(LoginPage.route);
+      Navigator.of(context).pushReplacementNamed(LoginPage.route);
     });
 
     return Scaffold(
