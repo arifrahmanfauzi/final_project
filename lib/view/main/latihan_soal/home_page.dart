@@ -1,4 +1,5 @@
 import 'package:final_project/constants/r.dart';
+import 'package:final_project/view/main/latihan_soal/mapel_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -18,11 +19,38 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: R.colors.grey,
       body: SafeArea(
-        child: Column(
+        child: ListView(
           children: [
             _buildUserHomeProfile(),
             _buildTopBanner(context),
-            _buildHomeListMapel()
+            _buildHomeListMapel(),
+            Container(
+              margin: EdgeInsets.symmetric(
+                horizontal: 20,
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        "Terbaru",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16),
+                      ),
+                      // Spacer(),
+                    ],
+                  ),
+                  Container(
+                    height: 170,
+                    child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: ((context, index) {
+                          return Image.asset(R.assets.banneHome);
+                        })),
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -42,7 +70,9 @@ class _HomePageState extends State<HomePage> {
               ),
               Spacer(),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(MapelPage.route);
+                  },
                   child: Text(
                     "Lihat Semua",
                     style: TextStyle(

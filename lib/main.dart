@@ -1,4 +1,5 @@
 import 'package:final_project/view/login_page.dart';
+import 'package:final_project/view/main/latihan_soal/mapel_page.dart';
 import 'package:final_project/view/main_page.dart';
 import 'package:final_project/view/register_page.dart';
 import 'package:final_project/view/splash_screen.dart';
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
         "/": (context) => const SplashScreen(),
         LoginPage.route: (context) => const LoginPage(),
         RegisterPage.route: (context) => const RegisterPage(),
-        MainPage.route: (context) => const MainPage()
+        MainPage.route: (context) => const MainPage(),
+        MapelPage.route: (context) => const MapelPage()
       },
     );
   }
