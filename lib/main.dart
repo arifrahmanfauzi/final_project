@@ -1,3 +1,4 @@
+import 'package:final_project/constants/r.dart';
 import 'package:final_project/view/login_page.dart';
 import 'package:final_project/view/main/latihan_soal/mapel_page.dart';
 import 'package:final_project/view/main_page.dart';
@@ -19,9 +20,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        textTheme: GoogleFonts.poppinsTextTheme(),
-        primarySwatch: Colors.blue,
-      ),
+          textTheme: GoogleFonts.poppinsTextTheme(),
+          primarySwatch: Colors.blue,
+          appBarTheme: AppBarTheme(
+            backgroundColor: R.colors.primary,
+          )),
       // home: const SplashScreen(), //routing biasa
       //Named Routing
       initialRoute: SplashScreen.route,
